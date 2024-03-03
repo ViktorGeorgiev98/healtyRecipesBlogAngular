@@ -1,0 +1,18 @@
+.site-footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: #ccc;
+    border-top: 2px solid black;
+    p {
+        margin: 40px 0 40px 0;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 24px;
+        color: green;
+    }
+}

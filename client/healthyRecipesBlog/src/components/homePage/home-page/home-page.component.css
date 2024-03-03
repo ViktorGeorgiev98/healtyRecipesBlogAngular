@@ -1,0 +1,33 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.home-page h2 {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.home-page p {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.home-page .best-recipes-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page .best-recipes-container h3 {
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+}
