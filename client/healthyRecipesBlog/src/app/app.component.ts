@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 // import { NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RegisterPageComponent } from '../components/RegisterPage/register-page/register-page.component';
+import { LoginPageComponent } from '../components/LoginPage/login-page/login-page.component';
 // import { NgForm } from '@angular/forms';
 
 // import { AppModule } from './app.module';
@@ -14,7 +15,7 @@ import { RegisterPageComponent } from '../components/RegisterPage/register-page/
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, NavBarComponent, HomePageComponent, CommonModule, RegisterPageComponent],
+  imports: [RouterOutlet, FooterComponent, NavBarComponent, HomePageComponent, CommonModule, RegisterPageComponent, LoginPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
