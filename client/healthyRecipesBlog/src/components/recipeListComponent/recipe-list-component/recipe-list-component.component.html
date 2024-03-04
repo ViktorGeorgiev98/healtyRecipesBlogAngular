@@ -1,0 +1,19 @@
+<div class="recipe-list-items-container">
+    <h3>Our newest recipes</h3>
+    <ul class="recipe-list-items">
+        <li *ngFor="let recipe of recipes" class="recipe-list-item" id="{{recipe._id}}">
+            <h4>Name: {{recipe.recipeName}}</h4>
+            <img src="{{recipe.imageUrl}}" alt="Random recipe">
+            <p>Author: {{recipe.author}}</p>
+            <p>Difficulty level: {{recipe.difficultyLevel}}</p>
+            <p>Short description: {{recipe.shortDescription}}</p>
+            <a class="btn-more-info" href="#">More info</a>
+        </li> 
+    </ul>
+</div>
+
+
+
+<li class="recipe-list-item" id="13424142">
+    
+</li>
