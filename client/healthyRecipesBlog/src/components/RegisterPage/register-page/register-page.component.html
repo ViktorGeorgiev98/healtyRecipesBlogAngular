@@ -1,5 +1,5 @@
 <div class="register-page">
-    <form (submit)="submitForm($event)">
+    <form #myForm="ngForm" (submit)="submitForm($event, myForm)">
             <h2>Create account</h2>
             <div class="form-group">
                 <label for="email">Email:</label>

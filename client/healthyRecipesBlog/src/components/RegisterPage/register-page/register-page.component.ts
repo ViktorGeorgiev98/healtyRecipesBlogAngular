@@ -12,7 +12,11 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './register-page.component.css'
 })
 export class RegisterPageComponent {
-  submitForm(event: Event) {
+  clearForm(form: NgForm) {
+    form.resetForm(); // This will reset the form
+  }
+
+  submitForm(event: Event, form: NgForm) {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
     const email = formData.get('email') as string;
@@ -22,8 +26,8 @@ export class RegisterPageComponent {
     console.log({ email, password, rePassword, username });
     if (!email || !password || !username || !rePassword) {
       return alert("All fields are required!"); 
+    }
   }
-}
 }
 
 
