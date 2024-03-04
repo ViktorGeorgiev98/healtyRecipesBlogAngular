@@ -1,5 +1,6 @@
 .site-footer {
-    position: static;
+    /* position: static; */
+    /* z-index: 1000231213; */
     bottom: 0;
     left: 0;
     width: 100%;
@@ -8,6 +9,9 @@
     justify-content: center; 
     background-color: #ccc;
     border-top: 2px solid black;
+    margin-bottom: 0;
+    /* z-index: 1000; */
+    overflow: hidden;
     p {
         margin: 40px 0 40px 0;
         font-weight: bold;
