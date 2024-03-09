@@ -1,22 +1,20 @@
-import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+// import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register-page',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.css'
 })
 export class RegisterPageComponent {
+  @ViewChild('myForm', { static: true }) myForm: NgForm | undefined;
   clearForm(form: NgForm) {
     form.resetForm(); // This will reset the form
   }
 
-  submitForm(event: Event, form: NgForm) {
+  submitForm(event: Event) {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
     const email = formData.get('email') as string;

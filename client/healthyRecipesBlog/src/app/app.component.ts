@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { RegisterPageComponent } from '../components/RegisterPage/register-page/register-page.component';
-import { LoginPageComponent } from '../components/LoginPage/login-page/login-page.component';
-import { CreateRecipeComponent } from '../components/CreateRecipe/create-recipe/create-recipe.component';
+import { CreateRecipeComponent } from '../components/Recipes/CreateRecipe/create-recipe/create-recipe.component';
 import { CoreModule } from '../components/core/core/core.module';
+import { UserModule } from '../components/User/user/user.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RegisterPageComponent, LoginPageComponent, CreateRecipeComponent, CoreModule],
+  imports: [RouterOutlet, CommonModule, UserModule, CoreModule, UserModule, CreateRecipeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
