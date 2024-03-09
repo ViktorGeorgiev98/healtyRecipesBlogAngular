@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { Recipe } from '../../../Types/Recipe';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// import { NgModule } from '@angular/core';
 @Component({
   selector: 'app-recipe-list-component',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './recipe-list-component.component.html',
   styleUrl: './recipe-list-component.component.css'
 })
