@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterPageComponent } from '../components/RegisterPage/register-page/register-page.component';
 import { LoginPageComponent } from '../components/LoginPage/login-page/login-page.component';
+import { CreateRecipeComponent } from '../components/CreateRecipe/create-recipe/create-recipe.component';
 // import { NgForm } from '@angular/forms';
 
 // import { AppModule } from './app.module';
@@ -15,7 +16,7 @@ import { LoginPageComponent } from '../components/LoginPage/login-page/login-pag
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, NavBarComponent, HomePageComponent, CommonModule, RegisterPageComponent, LoginPageComponent],
+  imports: [RouterOutlet, FooterComponent, NavBarComponent, HomePageComponent, CommonModule, RegisterPageComponent, LoginPageComponent, CreateRecipeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
