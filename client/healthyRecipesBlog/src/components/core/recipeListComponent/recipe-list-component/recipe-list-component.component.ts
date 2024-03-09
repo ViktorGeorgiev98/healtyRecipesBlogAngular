@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Recipe } from '../../../Types/Recipe';
+import { Recipe } from '../../../../Types/Recipe';
 // import { NgModule } from '@angular/core';
 @Component({
   selector: 'app-recipe-list-component',
