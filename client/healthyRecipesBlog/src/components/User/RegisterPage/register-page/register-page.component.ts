@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-// import { NgForm } from '@angular/forms';
+import { ApiService } from '../../../../API/api.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -9,22 +11,36 @@ import { NgForm } from '@angular/forms';
   styleUrl: './register-page.component.css'
 })
 export class RegisterPageComponent {
-  @ViewChild('myForm', { static: true }) myForm: NgForm | undefined;
-  clearForm(form: NgForm) {
-    form.resetForm(); // This will reset the form
-  }
 
-  submitForm(event: Event) {
-    event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    const email = formData.get('email') as string;
-    const password = formData.get('password') as string;
-    const rePassword = formData.get('rePassword') as string;
-    const username = formData.get('username') as string;
-    console.log({ email, password, rePassword, username });
-    if (!email || !password || !username || !rePassword) {
-      return alert("All fields are required!"); 
+  constructor(private apiService: ApiService, private router: Router) {}
+  @ViewChild('registerForm') form: NgForm | undefined;
+  userExists: boolean = false;
+
+  submitRegisterForm() {
+    if (!this.form) {
+      return;
     }
+  
+    const form = this.form;
+    const { email, password, rePassword, username } = form.value;
+    console.log({ email, password, rePassword, username });
+    if (!email || !password || !rePassword || !username) {
+      return alert("All fields are required!");
+    }
+    if (password !== rePassword) {
+      return alert("Passwords do not match!");
+    }
+  
+    this.apiService.register(email, password, username).subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.router.navigate(['/login']);
+      },
+      error: (error: any) => {
+        console.error(error);
+        alert('User already exists!');
+      }
+    });
   }
 }
 
