@@ -14,7 +14,6 @@ import { FormsModule, NgModel } from "@angular/forms";
 @NgModule({
     declarations: [
         AppComponent,
-        // CreateRecipeComponent
     ],
     imports: [
       BrowserModule,
@@ -22,10 +21,8 @@ import { FormsModule, NgModel } from "@angular/forms";
       SharedModule,
       UserModule,
       AppRoutingModule,
-    //   AppComponent,
       CreateRecipeComponent,
       HttpClientModule,
-      // NgModel,
       FormsModule
     ],
     providers: [],

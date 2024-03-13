@@ -2,8 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../../../../API/api.service';
 import { Router } from '@angular/router';
-// import { FormsModule } from '@angular/forms';
-// import { NgForm } from '@angular/forms';
+
 
 
 @Component({
