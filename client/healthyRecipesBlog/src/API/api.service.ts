@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 
 export class ApiService {
     constructor(private http: HttpClient) {}
-    const url = `http://localhost:3030`;
+    url = `http://localhost:3030`;
 
     register(email: string, password: string, username: string) {
         const urlRegister = `${this.url}/users/register`;
@@ -20,7 +20,7 @@ export class ApiService {
     }
 
     userExists(email: string) {
-        const urlUserExists = `${url}/users/${email}`;
+        const urlUserExists = `${this.url}/users/${email}`;
         return this.http.get(urlUserExists);
     }
 }

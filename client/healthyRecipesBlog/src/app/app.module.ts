@@ -6,6 +6,9 @@ import { UserModule } from "../components/User/user/user.module";
 import { SharedModule } from "../components/shared/shared/shared.module";
 import { AppRoutingModule } from "../routing/app-routing/app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, NgModel } from "@angular/forms";
+
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { BrowserModule } from "@angular/platform-browser";
       UserModule,
       AppRoutingModule,
     //   AppComponent,
-      CreateRecipeComponent
+      CreateRecipeComponent,
+      HttpClientModule,
+      // NgModel,
+      FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent],
