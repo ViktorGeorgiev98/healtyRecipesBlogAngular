@@ -15,39 +15,33 @@ export class RegisterPageComponent {
 
   constructor(private apiService: ApiService, private router: Router) {}
   @ViewChild('registerForm') form: NgForm | undefined;
-  userExists: {} = {};
+  userExists: boolean = false;
 
   submitRegisterForm() {
     if (!this.form) {
       return;
     }
-
+  
     const form = this.form;
-    const {email, password, rePassword, username} = form.value;
-    console.log({email, password, rePassword, username})
+    const { email, password, rePassword, username } = form.value;
+    console.log({ email, password, rePassword, username });
     if (!email || !password || !rePassword || !username) {
       return alert("All fields are required!");
     }
     if (password !== rePassword) {
       return alert("Passwords do not match!");
     }
-
-    this.apiService.userExists(email).subscribe((user) => {
-      this.userExists = user;
-    })
-
-    if (this.userExists) {
-      return alert("User already exists!");
-    }
-
-    this.apiService.register(email, password, username).subscribe((response: any) => {
-      console.log(response.json());
-    });
-    
-    this.router.navigate(['/login']);
-
   
-
+    this.apiService.register(email, password, username).subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.router.navigate(['/login']);
+      },
+      error: (error: any) => {
+        console.error(error);
+        alert('User already exists!');
+      }
+    });
   }
 }
 
