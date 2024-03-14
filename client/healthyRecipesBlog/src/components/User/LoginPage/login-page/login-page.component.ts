@@ -31,6 +31,7 @@ export class LoginPageComponent {
         console.log({response});
         this.user = response;
         console.log(this.user);
+        login(this.user);
         // this.router.navigate(['/home']);
       },
       error: (error: any) => {
