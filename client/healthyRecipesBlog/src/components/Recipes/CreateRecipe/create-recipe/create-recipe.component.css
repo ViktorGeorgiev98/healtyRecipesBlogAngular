@@ -64,16 +64,16 @@
         background-color: yellow;
     }
 
-    textarea {
-        font-size: 18px;
-        border-radius: 10px;
-        border: 2px solid black;
-        height: 200px;
-        width: 300px;
-        padding: 10px;
-    }
-
     textarea:hover {
         border-color: yellow;
     }
+}
+
+textarea {
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 200px;
+    width: 300px;
+    padding: 10px;
 }

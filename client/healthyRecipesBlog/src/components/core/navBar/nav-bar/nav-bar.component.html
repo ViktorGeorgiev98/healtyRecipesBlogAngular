@@ -7,10 +7,10 @@
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/recipes">Recipes</a></li>
             <li><a routerLink="/search">Search</a></li>
-            <li><a routerLink="/create-recipe">Create Recipe</a></li>
-            <li><a routerLink="/register">Register</a></li>
-            <li><a routerLink="/login">Login</a></li>
-            <li><a routerLink="/logout">Logout</a></li>
+            <li *ngIf="!isUserLoggedIn"><a routerLink="/register">Register</a></li>
+            <li *ngIf="!isUserLoggedIn"><a routerLink="/login">Login</a></li>
+            <li *ngIf="isUserLoggedIn"><a routerLink="/create-recipe">Create Recipe</a></li>
+            <li *ngIf="isUserLoggedIn"><a routerLink="/logout" (click)="logoutHandler()">Logout</a></li>
         </ul>
     </div>
     <h1>Healthy food does not need to have bad taste!</h1>
