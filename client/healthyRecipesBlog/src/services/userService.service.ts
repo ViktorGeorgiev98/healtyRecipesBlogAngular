@@ -19,4 +19,14 @@ export class UserService {
         localStorage.removeItem('accessToken');
     }
     
+
+    getAccessToken() {
+        return localStorage.getItem('accessToken');
+    }
+
+    
+    isUserLoggedIn() {
+        return !!localStorage.getItem('user');
+    }
+
 }
