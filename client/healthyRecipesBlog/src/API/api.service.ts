@@ -29,4 +29,13 @@ export class ApiService {
             })
         );
     }
+
+    login(email: string, password: string) {
+        const urlLogin = `${this.url}/users/login`;
+        const loginPayload = {
+            email: email,
+            password: password,
+        }
+        return this.http.post(urlLogin, loginPayload);
+    }
 }

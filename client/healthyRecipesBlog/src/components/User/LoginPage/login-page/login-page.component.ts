@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginPageComponent {
   @ViewChild('loginForm') form: NgForm | undefined;
   constructor(private apiService: ApiService, private router: Router) {}
-
+  user: {} = {};
 
   submitLoginForm() {
     if (!this.form) {
@@ -21,15 +21,22 @@ export class LoginPageComponent {
 
     const form = this.form;
     const { email, password } = form.value;
-    const payload = {
-      email: email,
-      password: password,
-    }
 
     if (!email || !password) {
       return alert("All fields are required!");
     }
-
-
+    
+    this.apiService.login(email, password).subscribe({
+      next: (response: any) => {
+        console.log({response});
+        this.user = response;
+        console.log(this.user);
+        // this.router.navigate(['/home']);
+      },
+      error: (error: any) => {
+        console.error(error);
+        alert('Email or password is wrong!');
+      }
+    })
   }
 }
