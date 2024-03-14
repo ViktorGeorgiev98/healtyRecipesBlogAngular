@@ -27,7 +27,8 @@ export class CreateRecipeComponent {
   const form = this.form;
 
   const { recipeName, author, imageUrl, difficultyLevel, shortDescription, ingredients, instructions} = form.value;
-  console.log({ recipeName, author, imageUrl, difficultyLevel, shortDescription, ingredients})
+  console.log({ recipeName, author, imageUrl, difficultyLevel, shortDescription, ingredients, instructions})
+  console.log({instructions})
   if (!recipeName || !author || !imageUrl || !difficultyLevel || !shortDescription || !ingredients || !instructions) {
     return alert("All fields are mandatory!");
   };
