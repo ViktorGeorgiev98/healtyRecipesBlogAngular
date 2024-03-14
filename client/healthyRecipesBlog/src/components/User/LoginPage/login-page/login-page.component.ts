@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../../../../API/api.service';
 import { Router } from '@angular/router';
+import { UserService } from '../../../../services/userService.service';
 // Remove import statement for NgForm
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
   @ViewChild('loginForm') form: NgForm | undefined;
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router, private userService: UserService) {}
   user: {} = {};
 
   submitLoginForm() {
@@ -31,8 +32,8 @@ export class LoginPageComponent {
         console.log({response});
         this.user = response;
         console.log(this.user);
-        login(this.user);
-        // this.router.navigate(['/home']);
+        this.userService.login(this.user);
+        this.router.navigate(['/']);
       },
       error: (error: any) => {
         console.error(error);
