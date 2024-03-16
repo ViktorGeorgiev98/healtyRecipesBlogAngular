@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../../../../API/api.service';
 import { Router } from '@angular/router';
+import { emailValidation, passwordValidation } from '../../../../utils/validationMethods.validator';
 
 
 
@@ -29,6 +30,17 @@ export class RegisterPageComponent {
     }
     if (password !== rePassword) {
       return alert("Passwords do not match!");
+    }
+
+    const emailIsValid = emailValidation(email);
+    const passwordIsValid = passwordValidation(password);
+
+    if (!emailIsValid) {
+      return alert("Invalid email!");
+    }
+
+    if (!passwordIsValid) {
+      return alert("Invalid password! Password must be at least 6 characters long, contain at least one uppercase and one lowercase letter and have at least 1 symbol.");
     }
   
     this.apiService.register(email, password, username).subscribe({
