@@ -10,7 +10,7 @@ export class UserService {
 
     login(user: any) {
         localStorage.setItem('user', JSON.stringify(user));
-        localStorage.setItem('accessToken', JSON.stringify(user.accessToken));
+        localStorage.setItem('accessToken', user.accessToken);
     }
     
 
