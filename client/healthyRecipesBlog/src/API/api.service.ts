@@ -51,11 +51,14 @@ export class ApiService {
             ingredients: ingredients,
             instructions: instructions,
         };
-        const accessToken = this.userService.getAccessToken();
+        const accessToken = this.userService.getAccessToken() || '';
+        console.log(`This is our access token: ${accessToken}`);
         const headers = new HttpHeaders({
-            'X-Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
-        })
-        return this.http.post(createUrlRecipe, createRecipePayload, { headers: headers });
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken
+        });
+
+        console.log("Headers: ", headers)
+        return this.http.post(createUrlRecipe, createRecipePayload, { headers });
     }
 }

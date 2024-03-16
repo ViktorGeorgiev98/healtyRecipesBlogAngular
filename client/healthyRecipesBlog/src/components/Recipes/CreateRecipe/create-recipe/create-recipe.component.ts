@@ -33,7 +33,16 @@ export class CreateRecipeComponent {
     return alert("All fields are mandatory!");
   };
 
-
+  this.apiService.createRecipe(recipeName, author, imageUrl, difficultyLevel, shortDescription, ingredients, instructions).subscribe({
+    next: (response: any) => {
+      console.log(response);
+      this.router.navigate(['/']);
+    },
+    error: (error:any) => {
+      console.log(error.message);
+      return alert(error.message);
+    }
+  })
 
 
 
