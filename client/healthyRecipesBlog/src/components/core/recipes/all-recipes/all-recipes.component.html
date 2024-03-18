@@ -4,7 +4,7 @@
     <!-- <p>If you want to add your own recipe, please login to your account.</p> -->
     <app-spinner *ngIf="isLoading"></app-spinner>
     <p *ngIf="recipesList.length === 0 && !isLoading" class="no-recipes">There are no recipes at the moment.</p>
-    <ul class="all-recipes-list">
+    <ul *ngIf="recipesList.length > 0" class="all-recipes-list">
         <li *ngFor="let recipe of recipesList" class="recipe-list-item" id="{{recipe._id}}">
             <h4>Name: {{recipe.recipeName}}</h4>
             <img src="{{recipe.imageUrl}}" alt="Random recipe">
@@ -14,4 +14,8 @@
             <a class="btn-more-info" routerLink="/recipes/{{recipe._id}}">More info</a>
         </li> 
     </ul>
+    <div *ngIf="recipesList.length > 0" class="buttons">
+        <button (click)="prevPage()">Previous</button>
+        <button (click)="nextPage()">Next</button>
+    </div>
 </div>
