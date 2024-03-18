@@ -1,7 +1,7 @@
 <div class="recipe-list-items-container">
     <h3>Our newest recipes</h3>
-    <app-spinner *ngIf="isLoading"></app-spinner>
-    <ul class="recipe-list-items">
+    <app-spinner *ngIf="isLoading === true"></app-spinner>
+    <ul *ngIf="recipesList.length > 0" class="recipe-list-items">
         <li *ngFor="let recipe of recipesList" class="recipe-list-item" id="{{recipe._id}}">
             <h4>Name: {{recipe.recipeName}}</h4>
             <img src="{{recipe.imageUrl}}" alt="Random recipe">
@@ -11,6 +11,7 @@
             <a class="btn-more-info" routerLink="/recipes/{{recipe._id}}">More info</a>
         </li> 
     </ul>
+    <p *ngIf="recipesList.length === 0 && !isLoading" class="no-recipes">No recipes at the moment.</p>
 </div>
 
 

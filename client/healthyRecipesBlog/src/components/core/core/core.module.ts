@@ -6,14 +6,15 @@ import { RecipeListComponentComponent } from '../recipeListComponent/recipe-list
 import { NavBarComponent } from '../navBar/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared/shared.module';
+import { AllRecipesComponent } from '../recipes/all-recipes/all-recipes.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent],
+  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent],
   imports: [
     CommonModule, RouterModule, SharedModule
   ],
-  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent]
+  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent]
 })
 export class CoreModule { }

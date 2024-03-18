@@ -73,3 +73,10 @@
         background-color: yellow;
     }
 }
+
+.no-recipes {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+}

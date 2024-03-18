@@ -63,7 +63,12 @@ export class ApiService {
     }
 
     getNewest6Recipes() {
-        const urlGetNewest6Recipes = `${this.url}/data/healthyRecipes?sortBy=_createdOn%20desc&limit=6`;
+        const urlGetNewest6Recipes = `${this.url}/data/healthyRecipes?sortBy=_createdOn%20desc&page=1&pageSize=6`;
         return this.http.get(urlGetNewest6Recipes);
+    }
+
+    getAllRecipes() {
+        const urlGetAllRecipes = `${this.url}/data/healthyRecipes`;
+        return this.http.get(urlGetAllRecipes);
     }
 }
