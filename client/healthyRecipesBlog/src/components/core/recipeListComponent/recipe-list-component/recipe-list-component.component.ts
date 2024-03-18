@@ -12,16 +12,18 @@ export class RecipeListComponentComponent {
   recipesList: Recipe[] | null = [];
   isLoading: boolean = true;
 
-  ngOnInIt() {
+  ngOnInit() {
     this.apiService.getNewest6Recipes().subscribe({
+      
       next: (recipes: any) => {
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 5000)
         console.log(recipes);
         this.recipesList = recipes;
 
-        setTimeout(() => {
-          this.isLoading = false;
-        }, 2000)
       },
+      
       error: (error: any) => {
         console.error(error.message);
         return alert('Error: ' + error.message);
