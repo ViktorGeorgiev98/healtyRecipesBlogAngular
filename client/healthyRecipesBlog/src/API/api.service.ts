@@ -61,4 +61,9 @@ export class ApiService {
         console.log("Headers: ", headers)
         return this.http.post(createUrlRecipe, createRecipePayload, { headers });
     }
+
+    getNewest6Recipes() {
+        const urlGetNewest6Recipes = `${this.url}/data/healthyRecipes?sortBy=_createdOn%20desc&limit=6`;
+        return this.http.get(urlGetNewest6Recipes);
+    }
 }
