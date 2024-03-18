@@ -1,7 +1,17 @@
 <div class="all-recipes-container">
     <h2>Here you can browse all our recipes.</h2>
+    <p>If you like something make sure to open the details page so you can try the recipe.</p>
+    <!-- <p>If you want to add your own recipe, please login to your account.</p> -->
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <p *ngIf="recipesList.length === 0 && !isLoading" class="no-recipes">There are no recipes at the moment.</p>
     <ul class="all-recipes-list">
-        
-
+        <li *ngFor="let recipe of recipesList" class="recipe-list-item" id="{{recipe._id}}">
+            <h4>Name: {{recipe.recipeName}}</h4>
+            <img src="{{recipe.imageUrl}}" alt="Random recipe">
+            <p>Author: {{recipe.author}}</p>
+            <p>Difficulty level: {{recipe.difficultyLevel}}</p>
+            <p>Short description: {{recipe.shortDescription}}</p>
+            <a class="btn-more-info" routerLink="/recipes/{{recipe._id}}">More info</a>
+        </li> 
     </ul>
 </div>
