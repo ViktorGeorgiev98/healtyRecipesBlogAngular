@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map } from "rxjs";
+import { Observable, map } from "rxjs";
 import { UserService } from "../services/userService.service";
 
 @Injectable({
@@ -61,4 +61,16 @@ export class ApiService {
         console.log("Headers: ", headers)
         return this.http.post(createUrlRecipe, createRecipePayload, { headers });
     }
+
+    getNewest6Recipes() {
+        const urlGetNewest6Recipes = `${this.url}/data/healthyRecipes?sortBy=_createdOn%20desc&page=1&pageSize=6`;
+        return this.http.get(urlGetNewest6Recipes);
+    }
+
+    getAllRecipes(page: number, pageSize: number): Observable<any> {
+        const offset = page;
+        const urlGetAllRecipes = `${this.url}/data/healthyRecipes?offset=${offset}&pageSize=${pageSize}`;
+        console.log("urlGetAllRecipes: ", urlGetAllRecipes)
+        return this.http.get(urlGetAllRecipes);
+      }
 }

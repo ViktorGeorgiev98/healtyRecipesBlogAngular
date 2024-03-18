@@ -1,20 +1,29 @@
-.recipe-list-items-container {
+.all-recipes-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.recipe-list-items-container h3 {
+.all-recipes-container h2 {
     margin-bottom: 30px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     font-style: italic;
+    margin-top: 40px;
 
 }
 
-.recipe-list-items-container .recipe-list-items {
+.all-recipes-container p {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.all-recipes-container .all-recipes-list {
     display: flex;
     flex-wrap: wrap;
     gap: 100px;
@@ -26,7 +35,7 @@
     margin-bottom: 50px;
 }
 
-.recipe-list-items-container .recipe-list-items li {
+.all-recipes-container .all-recipes-list li {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -37,6 +46,10 @@
     border-radius: 20px;
     padding: 20px;
     background-color: #ccc;
+    p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
     img {
         display: block;
         width: 350px;
@@ -79,4 +92,33 @@
     color: black;
     font-weight: bold;
     font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.buttons button{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: green;
+    color: black;
+    width: 200px;
+    height: 50px;
+}
+
+.buttons button:hover {
+    background-color: yellow;
 }

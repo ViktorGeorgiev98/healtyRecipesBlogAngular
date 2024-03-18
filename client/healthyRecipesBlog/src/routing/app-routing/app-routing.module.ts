@@ -8,6 +8,7 @@ import { LoginPageComponent } from '../../components/User/LoginPage/login-page/l
 import { CreateRecipeComponent } from '../../components/Recipes/CreateRecipe/create-recipe/create-recipe.component';
 import { AuthGuard } from '../../routeGuards/auth.activate';
 import { GuestGuard } from '../../routeGuards/guest.activate';
+import { AllRecipesComponent } from '../../components/core/recipes/all-recipes/all-recipes.component';
 
 const routes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: '/' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent, canActivate: [GuestGuard]},
   { path: 'login', component: LoginPageComponent, canActivate: [GuestGuard]},
   { path: 'create-recipe', component: CreateRecipeComponent, canActivate: [AuthGuard]},
+  { path: 'recipes', component: AllRecipesComponent },
   // { path: '**', redirectTo: '/404' },
   { path: '**', component: ErrorPageComponent }
 ];
