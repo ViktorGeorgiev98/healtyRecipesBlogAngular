@@ -7,4 +7,17 @@
             <button type="submit">Search</button>
         </div>
     </form>
+
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <p *ngIf="!foundRecipe && !isLoading" class="no-recipes">No recipe was found with the search parameter you have entered, please try something else.</p>
+    <ul *ngIf="foundRecipes.length > 0" class="all-recipes-list">
+        <li *ngFor="let recipe of foundRecipes" class="recipe-list-item" id="{{recipe._id}}">
+            <h4>Name: {{recipe.recipeName}}</h4>
+            <img src="{{recipe.imageUrl}}" alt="Random recipe">
+            <p>Author: {{recipe.author}}</p>
+            <p>Difficulty level: {{recipe.difficultyLevel}}</p>
+            <p>Short description: {{recipe.shortDescription}}</p>
+            <a class="btn-more-info" routerLink="/recipes/{{recipe._id}}">More info</a>
+        </li> 
+    </ul>
 </div>

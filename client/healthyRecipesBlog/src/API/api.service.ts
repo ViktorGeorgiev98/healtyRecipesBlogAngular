@@ -75,7 +75,7 @@ export class ApiService {
       }
 
       searchRecipes(recipeForSearch: string): Observable<any> {
-        const urlSearchRecipes = `${this.url}/data/healthyRecipes?where=recipeName LIKE '${recipeForSearch}`;
+        const urlSearchRecipes = `${this.url}/data/healthyRecipes?where=recipeName LIKE "${recipeForSearch}"`;
         console.log("urlSearchRecipes: ", urlSearchRecipes)
         return this.http.get(urlSearchRecipes);
       }
