@@ -7,14 +7,15 @@ import { NavBarComponent } from '../navBar/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared/shared.module';
 import { AllRecipesComponent } from '../recipes/all-recipes/all-recipes.component';
+import { SearchPageComponent } from '../search/search-page/search-page.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent],
+  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent],
   imports: [
     CommonModule, RouterModule, SharedModule
   ],
-  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent]
+  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent]
 })
 export class CoreModule { }
