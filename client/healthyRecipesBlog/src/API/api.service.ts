@@ -73,4 +73,16 @@ export class ApiService {
         console.log("urlGetAllRecipes: ", urlGetAllRecipes)
         return this.http.get(urlGetAllRecipes);
       }
+
+      searchRecipes(recipeForSearch: string): Observable<any> {
+        const urlSearchRecipes = `${this.url}/data/healthyRecipes?where=recipeName LIKE "${recipeForSearch}"`;
+        console.log("urlSearchRecipes: ", urlSearchRecipes)
+        return this.http.get(urlSearchRecipes);
+      }
+
+      getAllRecipesWithoutPagination() {
+        const urlGetAllRecipesWithoutPagination = `${this.url}/data/healthyRecipes`;
+        console.log("urlGetAllRecipesWithoutPagination: ", urlGetAllRecipesWithoutPagination)
+        return this.http.get(urlGetAllRecipesWithoutPagination);
+      }
 }
