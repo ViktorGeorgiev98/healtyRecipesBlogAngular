@@ -79,4 +79,10 @@ export class ApiService {
         console.log("urlSearchRecipes: ", urlSearchRecipes)
         return this.http.get(urlSearchRecipes);
       }
+
+      getAllRecipesWithoutPagination() {
+        const urlGetAllRecipesWithoutPagination = `${this.url}/data/healthyRecipes`;
+        console.log("urlGetAllRecipesWithoutPagination: ", urlGetAllRecipesWithoutPagination)
+        return this.http.get(urlGetAllRecipesWithoutPagination);
+      }
 }
