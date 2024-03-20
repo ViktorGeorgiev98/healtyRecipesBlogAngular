@@ -1,8 +1,8 @@
 <div class="search-page-container">
     <h2>Search for a recipe that you like</h2>
-    <form #searchForm="ngForm" (submit)="submitSearchForm()">
+    <form class="search-form" #searchForm="ngForm" (submit)="submitSearchForm()">
         <div class="form-group">
-            <label for="recipe">Recipe name</label>
+            <label for="recipe">Recipe name:</label>
             <input ngModel name="recipe" id="recipe" type="text" placeholder="Write recipe name here..." #recipeInput="ngModel">
             <button type="submit">Search</button>
         </div>

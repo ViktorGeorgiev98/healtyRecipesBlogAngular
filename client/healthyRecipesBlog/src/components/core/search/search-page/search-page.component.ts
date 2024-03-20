@@ -20,31 +20,32 @@ export class SearchPageComponent {
       if (!this.form) {
         return;
       }
-      this.isLoading = true;
       this.foundRecipes = [];
       const form = this.form;
       const recipeForSearch = form.value.recipe
       if (!recipeForSearch) {
         return alert("You cannot search with an empty field!")
-      }
-      setTimeout(() => {
-        this.apiService.searchRecipes(recipeForSearch).subscribe({
-          next: (recipes: any) => {
-            console.log(recipes);
-            this.foundRecipes = recipes;
-            if (this.foundRecipes.length > 0) {
-              this.foundRecipe = true;
-            } else {
+      } else {
+        this.isLoading = true;
+        setTimeout(() => {
+          this.apiService.searchRecipes(recipeForSearch).subscribe({
+            next: (recipes: any) => {
+              console.log(recipes);
+              this.foundRecipes = recipes;
+              if (this.foundRecipes.length > 0) {
+                this.foundRecipe = true;
+              } else {
+                this.foundRecipe = false;
+              }
+              this.isLoading = false;
+            },
+            error: (error: any) => {
+              console.log(error.message);
               this.foundRecipe = false;
             }
-            this.isLoading = false;
-          },
-          error: (error: any) => {
-            console.log(error.message);
-            this.foundRecipe = false;
-          }
-        });
-      }, 2000)
+          });
+        }, 2000)
+      }
     }
 
     }
