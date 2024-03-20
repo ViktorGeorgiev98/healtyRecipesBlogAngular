@@ -9,6 +9,7 @@ import { CreateRecipeComponent } from '../../components/Recipes/CreateRecipe/cre
 import { AuthGuard } from '../../routeGuards/auth.activate';
 import { GuestGuard } from '../../routeGuards/guest.activate';
 import { AllRecipesComponent } from '../../components/core/recipes/all-recipes/all-recipes.component';
+import { SearchPageComponent } from '../../components/core/search/search-page/search-page.component';
 
 const routes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: '/' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent, canActivate: [GuestGuard]},
   { path: 'create-recipe', component: CreateRecipeComponent, canActivate: [AuthGuard]},
   { path: 'recipes', component: AllRecipesComponent },
+  { path: 'search', component: SearchPageComponent  },
   // { path: '**', redirectTo: '/404' },
   { path: '**', component: ErrorPageComponent }
 ];
