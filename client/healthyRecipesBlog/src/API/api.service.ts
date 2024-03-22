@@ -50,6 +50,7 @@ export class ApiService {
             shortDescription: shortDescription,
             ingredients: ingredients,
             instructions: instructions,
+            likes: []
         };
         const accessToken = this.userService.getAccessToken() || '';
         console.log(`This is our access token: ${accessToken}`);
