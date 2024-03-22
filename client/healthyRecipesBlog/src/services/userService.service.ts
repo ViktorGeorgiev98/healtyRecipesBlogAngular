@@ -29,4 +29,17 @@ export class UserService {
         return !!localStorage.getItem('user');
     }
 
+    getUserId() {
+        const userString = localStorage.getItem('user');
+        if (userString) {
+            const user = JSON.parse(userString);
+            return user._id;
+        }
+        return null;
+    }
+
+    hasUserLikedREcipe(recipe: any, userID: string) {
+        return recipe.likes.includes(userID);
+    }
+
 }
