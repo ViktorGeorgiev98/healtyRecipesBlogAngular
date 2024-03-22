@@ -9,14 +9,15 @@ import { SharedModule } from '../../shared/shared/shared.module';
 import { AllRecipesComponent } from '../recipes/all-recipes/all-recipes.component';
 import { SearchPageComponent } from '../search/search-page/search-page.component';
 import { FormsModule, NgForm } from '@angular/forms';
+import { RecipeDetailsComponent } from '../../Recipes/recipeDetails/recipe-details/recipe-details.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent],
+  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent, RecipeDetailsComponent],
   imports: [
     CommonModule, RouterModule, SharedModule, FormsModule
   ],
-  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent]
+  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent, RecipeDetailsComponent]
 })
 export class CoreModule { }

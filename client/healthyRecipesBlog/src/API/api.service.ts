@@ -50,6 +50,7 @@ export class ApiService {
             shortDescription: shortDescription,
             ingredients: ingredients,
             instructions: instructions,
+            likes: []
         };
         const accessToken = this.userService.getAccessToken() || '';
         console.log(`This is our access token: ${accessToken}`);
@@ -84,5 +85,11 @@ export class ApiService {
         const urlGetAllRecipesWithoutPagination = `${this.url}/data/healthyRecipes`;
         console.log("urlGetAllRecipesWithoutPagination: ", urlGetAllRecipesWithoutPagination)
         return this.http.get(urlGetAllRecipesWithoutPagination);
+      }
+
+      getSingleRecipeById(id: string) {
+        const urlGetSingleRecipeById = `${this.url}/data/healthyRecipes/${id}`;
+        console.log("urlGetSingleRecipeById: ", urlGetSingleRecipeById)
+        return this.http.get(urlGetSingleRecipeById);
       }
 }

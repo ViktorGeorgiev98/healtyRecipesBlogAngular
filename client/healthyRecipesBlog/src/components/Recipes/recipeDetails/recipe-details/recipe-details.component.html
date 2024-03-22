@@ -1,0 +1,20 @@
+<div class="recipe-details-container">
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div *ngIf="!isLoading" class="recipe-details">
+        <h2>Recipe Details</h2>
+        <img src="{{currentRecipe.imageUrl}}" alt="recipe-details-image">
+        <p>Recipe name: {{currentRecipe.recipeName}}</p>
+        <p>Author: {{currentRecipe.author}}</p>
+        <p>Difficulty level: {{currentRecipe.difficultyLevel}}</p>
+        <p>Short description: {{currentRecipe.shortDescription}}</p>
+        <p>Ingredients: {{currentRecipe.ingredients}}</p>
+        <p>Instructions:</p>
+        <p class="instructions">{{currentRecipe.instructions}}</p>
+        <p>Likes: {{currentRecipe.likes.length}}</p>
+        <div *ngIf="isUserLoggedIn" class="request-buttons">
+            <button class="btn-btn-edit">Edit</button>
+            <button class="btn-btn-delete">Delete</button>
+        </div>
+        <button *ngIf="isUserLoggedIn && !userHasLikedRecipe" class="btn-btn-likes">Like</button>
+    </div>
+</div>

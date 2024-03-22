@@ -42,6 +42,7 @@ export class SearchPageComponent {
             error: (error: any) => {
               console.log(error.message);
               this.foundRecipe = false;
+              this.isLoading = false;
             }
           });
         }, 2000)

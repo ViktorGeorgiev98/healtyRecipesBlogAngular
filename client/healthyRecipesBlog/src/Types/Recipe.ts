@@ -7,4 +7,5 @@ export interface Recipe {
     shortDescription: string;
     ingredients: string;
     instructions: string;
+    likes: [];
 }

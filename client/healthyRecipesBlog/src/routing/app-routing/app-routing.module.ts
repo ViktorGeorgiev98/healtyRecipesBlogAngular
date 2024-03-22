@@ -10,6 +10,7 @@ import { AuthGuard } from '../../routeGuards/auth.activate';
 import { GuestGuard } from '../../routeGuards/guest.activate';
 import { AllRecipesComponent } from '../../components/core/recipes/all-recipes/all-recipes.component';
 import { SearchPageComponent } from '../../components/core/search/search-page/search-page.component';
+import { RecipeDetailsComponent } from '../../components/Recipes/recipeDetails/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   // { path: '', pathMatch: 'full', redirectTo: '/' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'create-recipe', component: CreateRecipeComponent, canActivate: [AuthGuard]},
   { path: 'recipes', component: AllRecipesComponent },
   { path: 'search', component: SearchPageComponent  },
+  { path: 'recipes/:id', component: RecipeDetailsComponent },
   // { path: '**', redirectTo: '/404' },
   { path: '**', component: ErrorPageComponent }
 ];
