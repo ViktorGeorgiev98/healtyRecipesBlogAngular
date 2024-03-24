@@ -103,6 +103,29 @@ export class ApiService {
             'X-Authorization': accessToken
         });
         return this.http.delete(urlDeleteRecipeById, {headers});
+      }
 
+      likeRecipeById(recipe: any, userId: string) {
+        const urlForLike = `${this.url}/data/healthyRecipes/${recipe._id}`;
+        console.log("urlForLike: ", urlForLike)
+        const accessToken = this.userService.getAccessToken() || '';
+        console.log(`This is our access token: ${accessToken}`);
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken
+        });
+        const likes = recipe.likes;
+        likes.push(userId);
+        const payload = {
+            recipeName: recipe.recipeName,
+            author: recipe.author,
+            imageUrl: recipe.imageUrl,
+            difficultyLevel: recipe.difficultyLevel,
+            shortDescription: recipe.shortDescription,
+            ingredients: recipe.ingredients,
+            instructions: recipe.instructions,
+            likes: likes
+        }
+        return this.http.put(urlForLike, payload, {headers});
       }
 }

@@ -1,0 +1,36 @@
+<div class="edit-recipe-page">
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <form *ngIf="!isLoading" #editRecipeForm="ngForm" (submit)="editRecipeSubmitHandler()">
+            <h2>Edit Recipe</h2>
+            <div class="form-group">
+                <label for="recipeName">Recipe name:</label>
+                <input [(ngModel)]="currentRecipe.recipeName" type="text" class="form-control" id="recipeName" name="recipeName" placeholder="Enter recipe name here">
+            </div>
+            <div class="form-group">
+                <label for="author">Author name:</label>
+                <input [(ngModel)]="currentRecipe.author" type="text" class="form-control" id="author" name="author" placeholder="Enter author name here">
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">Image url:</label>
+                <input [(ngModel)]="currentRecipe.imageUrl" type="text" class="form-control" id="imageUrl" name="imageUrl" placeholder="Enter image url here">
+            </div>
+            <div class="form-group">
+                <label for="difficultyLevel">Difficulty level:</label>
+                <input [(ngModel)]="currentRecipe.difficultyLevel" type="text" class="form-control" id="difficultyLevel" name="difficultyLevel" placeholder="Enter difficulty level here">
+            </div>
+            <div class="form-group">
+                <label for="shortDescription">Short description:</label>
+                <input [(ngModel)]="currentRecipe.shortDescription" type="text" class="form-control" id="shortDescription" name="shortDescription" placeholder="Enter short description here">
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients:</label>
+                <input [(ngModel)]="currentRecipe.ingredients" type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Enter ingredients here">
+            </div>
+            <div class="form-group">
+                <label for="instructions">Instructions:</label>
+                <textarea [(ngModel)]="currentRecipe.instructions" class="form-control" id="instructions" name="instructions" placeholder="Enter instructions here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary-submit-register">Update Recipe</button>
+        
+    </form>
+</div>

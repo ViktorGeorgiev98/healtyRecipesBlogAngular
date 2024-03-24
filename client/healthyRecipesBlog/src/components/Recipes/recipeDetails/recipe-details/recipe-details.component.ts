@@ -73,4 +73,24 @@ export class RecipeDetailsComponent {
       return;
     }
   }
+
+  likeRecipeButtonHandler() {
+    this.apiService.likeRecipeById(this.currentRecipe, this.userId).subscribe({
+      next: (response: any) => {
+        console.log(response);
+        // this.currentRecipe.likes = response;
+        // this.userHasLikedRecipe = this.userService.hasUserLikedREcipe(this.currentRecipe, this.userId);
+        this.router.navigate(['/recipes/' + this.currentRecipe._id]);
+
+      },
+      error: (error: any) => {
+        console.log(error.message);
+        return alert("Error: " + error.message);
+      }
+    });
+  }
+
+  editRecipeHandler() {
+    this.router.navigate(['/recipes/' + this.currentRecipe._id + '/edit']);
+  }
 }
