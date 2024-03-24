@@ -92,4 +92,17 @@ export class ApiService {
         console.log("urlGetSingleRecipeById: ", urlGetSingleRecipeById)
         return this.http.get(urlGetSingleRecipeById);
       }
+
+      deleteRecipeById(id: string) {
+        const urlDeleteRecipeById = `${this.url}/data/healthyRecipes/${id}`;
+        console.log("urlDeleteRecipeById: ", urlDeleteRecipeById)
+        const accessToken = this.userService.getAccessToken() || '';
+        console.log(`This is our access token: ${accessToken}`);
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken
+        });
+        return this.http.delete(urlDeleteRecipeById, {headers});
+
+      }
 }

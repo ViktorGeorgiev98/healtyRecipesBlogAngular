@@ -13,8 +13,8 @@
         <p>Likes: {{currentRecipe.likes.length}}</p>
         <div *ngIf="isUserLoggedIn" class="request-buttons">
             <button class="btn-btn-edit">Edit</button>
-            <button class="btn-btn-delete">Delete</button>
+            <button class="btn-btn-delete" (click)="deleteRecipeHandler()">Delete</button>
         </div>
-        <button *ngIf="isUserLoggedIn && !userHasLikedRecipe" class="btn-btn-likes">Like</button>
+        <button *ngIf="isUserLoggedIn && !userHasLikedRecipe && !userIsOwner" class="btn-btn-likes">Like</button>
     </div>
 </div>

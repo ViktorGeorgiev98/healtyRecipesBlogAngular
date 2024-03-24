@@ -42,4 +42,8 @@ export class UserService {
         return recipe.likes.includes(userID);
     }
 
+    isUserOwnerOfRecipe(recipe: any, userID: string) {
+        return recipe._ownerId === userID;
+    }
+
 }
