@@ -10,14 +10,15 @@ import { AllRecipesComponent } from '../recipes/all-recipes/all-recipes.componen
 import { SearchPageComponent } from '../search/search-page/search-page.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RecipeDetailsComponent } from '../../Recipes/recipeDetails/recipe-details/recipe-details.component';
+import { EditRecipeComponent } from '../../Recipes/editRecipe/edit-recipe/edit-recipe.component';
 
 
 
 @NgModule({
-  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent, RecipeDetailsComponent],
+  declarations: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent, RecipeDetailsComponent, EditRecipeComponent],
   imports: [
     CommonModule, RouterModule, SharedModule, FormsModule
   ],
-  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent, RecipeDetailsComponent]
+  exports: [HomePageComponent, FooterComponent, RecipeListComponentComponent, NavBarComponent, AllRecipesComponent, SearchPageComponent, RecipeDetailsComponent, EditRecipeComponent]
 })
 export class CoreModule { }

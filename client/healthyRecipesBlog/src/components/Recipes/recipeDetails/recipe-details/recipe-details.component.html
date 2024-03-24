@@ -10,11 +10,11 @@
         <p>Ingredients: {{currentRecipe.ingredients}}</p>
         <p>Instructions:</p>
         <p class="instructions">{{currentRecipe.instructions}}</p>
-        <p>Likes: {{currentRecipe.likes.length}}</p>
-        <div *ngIf="isUserLoggedIn" class="request-buttons">
-            <button class="btn-btn-edit">Edit</button>
-            <button class="btn-btn-delete">Delete</button>
+        <!-- <p>Likes: {{currentRecipe.likes.length}}</p> -->
+        <div *ngIf="isUserLoggedIn && userIsOwner" class="request-buttons">
+            <button class="btn-btn-edit" (click)="editRecipeHandler()">Edit</button>
+            <button class="btn-btn-delete" (click)="deleteRecipeHandler()">Delete</button>
         </div>
-        <button *ngIf="isUserLoggedIn && !userHasLikedRecipe" class="btn-btn-likes">Like</button>
+        <!-- <button *ngIf="isUserLoggedIn && !userHasLikedRecipe && !userIsOwner" class="btn-btn-likes" (click)="likeRecipeButtonHandler()">Like</button> -->
     </div>
 </div>

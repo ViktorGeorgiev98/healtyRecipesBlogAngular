@@ -1,0 +1,83 @@
+.edit-recipe-page {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 40px;
+}
+
+.edit-recipe-page form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 40px 80px 40px 80px;
+    background-color: #ccc;
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        font-style: italic;
+    }
+    button {
+        text-decoration: none;
+        font-size: 22px;
+        background-color: green;
+        border: 2px solid black;
+        border-radius: 10px;
+        color: black;
+        display: block;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: yellow;
+        color: black;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    label {
+        font-size: 22px;
+        font-weight: bold;
+        font-style: italic;
+    }
+    input {
+        font-size: 18px;
+        border-radius: 10px;
+        border: 2px solid black;
+        height: 40px;
+        padding: 10px;
+    }
+
+    input:hover {
+        background-color: yellow;
+    }
+
+    textarea:hover {
+        border-color: yellow;
+    }
+}
+
+textarea {
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 200px;
+    width: 600px;
+    padding: 10px;
+}
+
+app-spinner {
+    margin-bottom: 200px;
+}
