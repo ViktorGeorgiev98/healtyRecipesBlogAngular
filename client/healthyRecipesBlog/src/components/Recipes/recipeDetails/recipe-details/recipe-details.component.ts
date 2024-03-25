@@ -20,6 +20,7 @@ export class RecipeDetailsComponent {
   userId: string = '';
   recipeId: string = '';
   userIsOwner: boolean = false;
+  recipeComments: any = [];
 
   ngOnInit() {
     this.isUserLoggedIn = this.userService.isUserLoggedIn();
@@ -37,6 +38,18 @@ export class RecipeDetailsComponent {
           if (this.userId) {
             this.userIsOwner = this.userService.isUserOwnerOfRecipe(this.currentRecipe, this.userId);
           }
+          this.isLoading = true;
+        },
+        error: (error: any) => {
+          console.log(error.message);
+          this.isLoading = false;
+          return alert("Error: " + error.message);
+        }
+      });
+      this.apiService.getComments(this.recipeId).subscribe({
+        next: (comments: any) => {
+          console.log(comments);
+          this.recipeComments = comments;
           this.isLoading = false;
         },
         error: (error: any) => {
@@ -50,6 +63,7 @@ export class RecipeDetailsComponent {
 
    })
   }
+
 
   deleteRecipeHandler() {
     const result = confirm("Are you sure you want to delete this recipe ?");
@@ -111,6 +125,17 @@ export class RecipeDetailsComponent {
     this.apiService.submitComment(comment, this.recipeId).subscribe({
       next: (response: any) => {
         console.log(response);
+        this.apiService.getComments(this.recipeId).subscribe({
+          next: (comments: any) => {
+            console.log(comments);
+            this.recipeComments = comments;
+          },
+          error: (error: any) => {
+            console.log(error.message);
+            return alert("Error: " + error.message);
+          }
+        })
+        this.router.navigate([`/recipes/${this.recipeId}`], { queryParams: { reload: true } });
       },
       error: (error: any) => {
         console.log(error.message);

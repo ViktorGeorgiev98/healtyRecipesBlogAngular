@@ -145,4 +145,10 @@ export class ApiService {
         }
         return this.http.post(urlSubmitComment, payload, {headers});
       }
+
+      getComments(recipeId: string) {
+        const urlGetComments = `${this.url}/data/healthyRecipesBlogComments?refId=${recipeId}`;
+        console.log("urlGetComments: ", urlGetComments)
+        return this.http.get(urlGetComments);
+      }
 }

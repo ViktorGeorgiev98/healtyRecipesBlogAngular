@@ -23,4 +23,17 @@
         <textarea ngModel name="comment" id="comment" placeholder="Write your comment here..." #commentInput="ngModel"></textarea>
         <button class="btn-btn-comment" type="submit">Submit comment</button>
     </form>
+
+    <div *ngIf="recipeComments.length > 0 &&!isLoading" class="comments-container">
+        <h2>Comments</h2>
+        <ul class="comments-list">
+            <li *ngFor="let comment of recipeComments" class="comment-list-item">
+                <h3>Author: {{comment.author}}</h3>
+                <p>Comment:</p>
+                <p>{{comment.comment}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <p *ngIf="recipeComments.length === 0 &&!isLoading" class="no-comments">No comments for this recipe yet...</p>
 </div>
