@@ -18,9 +18,9 @@
         <!-- <button *ngIf="isUserLoggedIn && !userHasLikedRecipe && !userIsOwner" class="btn-btn-likes" (click)="likeRecipeButtonHandler()">Like</button> -->
     </div>
 
-    <form *ngIf="isUserLoggedIn && !userIsOwner" class="comments-form">
+    <form *ngIf="isUserLoggedIn && !userIsOwner &&!isLoading" #commentsForm="ngForm" class="comments-form" (submit)="submitCommentHandler()">
         <h2>Leave a comment</h2>
-        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Write your comment here..."></textarea>
+        <textarea ngModel name="comment" id="comment" placeholder="Write your comment here..." #commentInput="ngModel"></textarea>
         <button class="btn-btn-comment" type="submit">Submit comment</button>
     </form>
 </div>

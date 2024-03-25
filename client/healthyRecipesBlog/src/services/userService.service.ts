@@ -46,4 +46,15 @@ export class UserService {
         return recipe._ownerId === userID;
     }
 
+    getEmail() {
+        const user = localStorage.getItem('user');
+        if (user) {
+            const userData = JSON.parse(user);
+            return userData.email;
+        } else {
+            return null;
+        }
+
+    }
+
 }

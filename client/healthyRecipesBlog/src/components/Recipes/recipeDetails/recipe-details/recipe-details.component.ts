@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ApiService } from '../../../../API/api.service';
 import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 import { Recipe } from '../../../../Types/Recipe';
 import { UserService } from '../../../../services/userService.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-details',
@@ -10,6 +11,7 @@ import { UserService } from '../../../../services/userService.service';
   styleUrl: './recipe-details.component.css'
 })
 export class RecipeDetailsComponent {
+  @ViewChild('commentsForm') form: NgForm | undefined;
   constructor(private apiService: ApiService, private route: ActivatedRoute, private userService: UserService, private router: Router) {}
   currentRecipe: any = [];
   isLoading: boolean = false;
@@ -92,5 +94,29 @@ export class RecipeDetailsComponent {
 
   editRecipeHandler() {
     this.router.navigate(['/recipes/' + this.currentRecipe._id + '/edit']);
+  }
+
+
+  submitCommentHandler() {
+    if (!this.form) {
+      return;
+    }
+
+    const form = this.form;
+    const comment = form.value.comment;
+    console.log({comment});
+    if (!comment) {
+      return alert("Comment field is mandatory!");
+    }
+    this.apiService.submitComment(comment, this.recipeId).subscribe({
+      next: (response: any) => {
+        console.log(response);
+      },
+      error: (error: any) => {
+        console.log(error.message);
+        return alert("Error: " + error.message);
+      }
+    })
+
   }
 }
