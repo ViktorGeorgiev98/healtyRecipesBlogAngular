@@ -55,7 +55,7 @@ export class RecipeDetailsComponent {
         error: (error: any) => {
           console.log(error.message);
           this.isLoading = false;
-          return alert("Error: " + error.message);
+          // return alert("Error: " + error.message);
         }
       });
     }, 2000)
