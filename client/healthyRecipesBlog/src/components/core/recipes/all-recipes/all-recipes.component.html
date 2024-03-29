@@ -3,8 +3,8 @@
     <p>If you like something make sure to open the details page so you can try the recipe.</p>
     <!-- <p>If you want to add your own recipe, please login to your account.</p> -->
     <app-spinner *ngIf="isLoading"></app-spinner>
-    <p *ngIf="recipesList.length === 0 && !isLoading" class="no-recipes">There are no recipes at the moment.</p>
-    <ul *ngIf="recipesList.length > 0" class="all-recipes-list">
+    <p *ngIf="recipesList.length === 0 && !isLoading" class="no-recipes" [@myAnimationTrigger]>There are no recipes at the moment.</p>
+    <ul *ngIf="recipesList.length > 0" class="all-recipes-list" [@myAnimationTrigger]>
         <li *ngFor="let recipe of recipesList" class="recipe-list-item" id="{{recipe._id}}">
             <h4>Name: {{recipe.recipeName}}</h4>
             <img src="{{recipe.imageUrl}}" alt="Random recipe">

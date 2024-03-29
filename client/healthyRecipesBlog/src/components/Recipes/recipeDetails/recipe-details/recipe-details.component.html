@@ -1,6 +1,6 @@
 <div class="recipe-details-container">
     <app-spinner *ngIf="isLoading"></app-spinner>
-    <div *ngIf="!isLoading" class="recipe-details">
+    <div *ngIf="!isLoading" class="recipe-details" [@myAnimationTrigger]>
         <h2>Recipe Details</h2>
         <img src="{{currentRecipe.imageUrl}}" alt="recipe-details-image">
         <p>Recipe name: {{currentRecipe.recipeName}}</p>
@@ -17,4 +17,23 @@
         </div>
         <!-- <button *ngIf="isUserLoggedIn && !userHasLikedRecipe && !userIsOwner" class="btn-btn-likes" (click)="likeRecipeButtonHandler()">Like</button> -->
     </div>
+
+    <form *ngIf="isUserLoggedIn && !userIsOwner &&!isLoading" #commentsForm="ngForm" class="comments-form" (submit)="submitCommentHandler()" [@myAnimationTrigger]>
+        <h2>Leave a comment</h2>
+        <textarea ngModel name="comment" id="comment" placeholder="Write your comment here..." #commentInput="ngModel"></textarea>
+        <button class="btn-btn-comment" type="submit">Submit comment</button>
+    </form>
+
+    <div *ngIf="recipeComments.length > 0 &&!isLoading" class="comments-container" [@myAnimationTrigger]>
+        <h2>Comments</h2>
+        <ul class="comments-list" [@myAnimationTrigger]>
+            <li *ngFor="let comment of recipeComments" class="comment-list-item">
+                <h3>Author: {{comment.author}}</h3>
+                <p>Comment:</p>
+                <p>{{comment.comment}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <p *ngIf="recipeComments.length === 0 &&!isLoading" class="no-comments">No comments for this recipe yet...</p>
 </div>

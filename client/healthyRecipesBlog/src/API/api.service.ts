@@ -128,4 +128,27 @@ export class ApiService {
         }
         return this.http.put(urlForEdit, payload, {headers});
       }
+
+      submitComment(comment: string, refId: string) {
+        const urlSubmitComment = `${this.url}/data/healthyRecipesBlogComments`;
+        const accessToken = this.userService.getAccessToken() || '';
+        const userEmail = this.userService.getEmail();
+        console.log(`This is our access token: ${accessToken}`);
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'X-Authorization': accessToken
+        });
+        const payload = {
+            author: userEmail,
+            comment: comment,
+            refId: refId
+        }
+        return this.http.post(urlSubmitComment, payload, {headers});
+      }
+
+      getComments(recipeId: string) {
+        const urlGetComments = `${this.url}/data/healthyRecipesBlogComments?where=refId LIKE "${recipeId}"`;
+        console.log("urlGetComments: ", urlGetComments)
+        return this.http.get(urlGetComments);
+      }
 }

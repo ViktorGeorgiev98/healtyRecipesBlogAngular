@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../../../API/api.service';
 import { Router } from '@angular/router';
 import { UserService } from '../../../../services/userService.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
@@ -13,7 +14,18 @@ import { UserService } from '../../../../services/userService.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './create-recipe.component.html',
-  styleUrl: './create-recipe.component.css'
+  styleUrl: './create-recipe.component.css',
+  animations: [
+    trigger('myAnimationTrigger', [
+      transition(':enter', [
+        style({ transform: 'translateY(100%)', opacity: 0 }), // Initial position and opacity
+        animate('1000ms ease-out', style({ transform: 'translateY(0)', opacity: 1 })) // End position and opacity
+      ]),
+      transition(':leave', [
+        animate('1000ms ease-in', style({ transform: 'translateY(100%)', opacity: 0 })) // End position and opacity
+      ]),
+    ]),
+  ],
 })
 export class CreateRecipeComponent {
   @ViewChild('createRecipeForm') form: NgForm | undefined;

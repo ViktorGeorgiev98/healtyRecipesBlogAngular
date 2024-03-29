@@ -3,11 +3,23 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from '../../../../Types/Recipe';
 import { ApiService } from '../../../../API/api.service';
 import { NgForm } from '@angular/forms';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-edit-recipe',
   templateUrl: './edit-recipe.component.html',
-  styleUrls: ['./edit-recipe.component.css']
+  styleUrls: ['./edit-recipe.component.css'],
+  animations: [
+    trigger('myAnimationTrigger', [
+      transition(':enter', [
+        style({ transform: 'translateY(100%)', opacity: 0 }), // Initial position and opacity
+        animate('1000ms ease-out', style({ transform: 'translateY(0)', opacity: 1 })) // End position and opacity
+      ]),
+      transition(':leave', [
+        animate('1000ms ease-in', style({ transform: 'translateY(100%)', opacity: 0 })) // End position and opacity
+      ]),
+    ]),
+  ],
 })
 export class EditRecipeComponent {
   @ViewChild('editRecipeForm') form: NgForm | undefined;

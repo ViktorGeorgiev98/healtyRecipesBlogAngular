@@ -10,7 +10,7 @@
 
     <app-spinner *ngIf="isLoading"></app-spinner>
     <p *ngIf="!foundRecipe && !isLoading" class="no-recipes">No recipe was found with the search parameter you have entered, please try something else.</p>
-    <ul *ngIf="foundRecipes.length > 0" class="all-recipes-list">
+    <ul *ngIf="foundRecipes.length > 0" class="all-recipes-list" [@myAnimationTrigger]>
         <li *ngFor="let recipe of foundRecipes" class="recipe-list-item" id="{{recipe._id}}">
             <h4>Name: {{recipe.recipeName}}</h4>
             <img src="{{recipe.imageUrl}}" alt="Random recipe">
