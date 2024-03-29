@@ -1,7 +1,7 @@
 <div class="recipe-list-items-container">
     <h3>Our newest recipes</h3>
     <app-spinner *ngIf="isLoading === true"></app-spinner>
-    <ul *ngIf="recipesList.length > 0" class="recipe-list-items">
+    <ul *ngIf="recipesList.length > 0" class="recipe-list-items" [@myAnimationTrigger]>
         <li *ngFor="let recipe of recipesList" class="recipe-list-item" id="{{recipe._id}}">
             <h4>Name: {{recipe.recipeName}}</h4>
             <img src="{{recipe.imageUrl}}" alt="Random recipe">

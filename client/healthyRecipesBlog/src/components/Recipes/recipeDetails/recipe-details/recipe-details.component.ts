@@ -4,11 +4,23 @@ import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 import { Recipe } from '../../../../Types/Recipe';
 import { UserService } from '../../../../services/userService.service';
 import { NgForm } from '@angular/forms';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-recipe-details',
   templateUrl: './recipe-details.component.html',
-  styleUrl: './recipe-details.component.css'
+  styleUrl: './recipe-details.component.css',
+  animations: [
+    trigger('myAnimationTrigger', [
+      transition(':enter', [
+        style({ transform: 'translateY(100%)', opacity: 0 }), // Initial position and opacity
+        animate('1000ms ease-out', style({ transform: 'translateY(0)', opacity: 1 })) // End position and opacity
+      ]),
+      transition(':leave', [
+        animate('1000ms ease-in', style({ transform: 'translateY(100%)', opacity: 0 })) // End position and opacity
+      ]),
+    ]),
+  ],
 })
 export class RecipeDetailsComponent {
   @ViewChild('commentsForm') form: NgForm | undefined;

@@ -8,6 +8,7 @@ import { AppRoutingModule } from "../routing/app-routing/app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, NgModel } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -23,7 +24,9 @@ import { FormsModule, NgModel } from "@angular/forms";
       AppRoutingModule,
       CreateRecipeComponent,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      BrowserAnimationsModule
+      // ɵBrowserAnimationBuilder
     ],
     providers: [],
     bootstrap: [AppComponent],

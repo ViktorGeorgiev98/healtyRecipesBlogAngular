@@ -1,6 +1,6 @@
 <div class="edit-recipe-page">
     <app-spinner *ngIf="isLoading"></app-spinner>
-    <form *ngIf="!isLoading" #editRecipeForm="ngForm" (submit)="editRecipeSubmitHandler()">
+    <form *ngIf="!isLoading" #editRecipeForm="ngForm" (submit)="editRecipeSubmitHandler()" [@myAnimationTrigger]>
             <h2>Edit Recipe</h2>
             <div class="form-group">
                 <label for="recipeName">Recipe name:</label>
