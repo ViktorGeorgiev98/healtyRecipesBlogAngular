@@ -33,6 +33,7 @@ export class RecipeDetailsComponent {
   recipeId: string = '';
   userIsOwner: boolean = false;
   recipeComments: any = [];
+  commentsShown: boolean = false;
 
   ngOnInit() {
     this.isUserLoggedIn = this.userService.isUserLoggedIn();
@@ -155,5 +156,9 @@ export class RecipeDetailsComponent {
       }
     })
 
+  }
+
+  triggerComments() {
+    this.commentsShown =! this.commentsShown;
   }
 }
