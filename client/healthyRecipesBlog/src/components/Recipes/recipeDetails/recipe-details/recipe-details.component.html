@@ -24,7 +24,9 @@
         <button class="btn-btn-comment" type="submit">Submit comment</button>
     </form>
 
-    <div *ngIf="recipeComments.length > 0 &&!isLoading" class="comments-container" [@myAnimationTrigger]>
+    <button *ngIf="recipeComments.length > 0 && !isLoading && !commentsShown" class="btn-btn-show-comments" (click)="triggerComments()">Show comments</button>
+    <button *ngIf="recipeComments.length > 0 && !isLoading && commentsShown" class="btn-btn-show-comments" (click)="triggerComments()">Hide comments</button>
+    <div *ngIf="recipeComments.length > 0 &&!isLoading && commentsShown" class="comments-container" [@myAnimationTrigger]>
         <h2>Comments</h2>
         <ul class="comments-list" [@myAnimationTrigger]>
             <li *ngFor="let comment of recipeComments" class="comment-list-item">
