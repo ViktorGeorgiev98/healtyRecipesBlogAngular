@@ -20,7 +20,153 @@
         },
         "sessions": {}
     },
-    "seedData": {
+    "seedData": {       
+        "healthyRecipes": {
+            "1": {
+                "recipeName": "Classic Spaghetti Carbonara",
+                "author": "Chef Luigi",
+                "imageUrl": "https://www.simplyrecipes.com/thmb/SebeiYFLjCD0TivmMJj_HRUC7zg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Spaghetti-Carbonara-LEAD-6-b3880a6eb49f4158be6f13885c797ded.jpg",
+                "difficultyLevel": "Intermediate",
+                "shortDescription": "A traditional Italian pasta dish with eggs, cheese, pancetta, and pepper.",
+                "ingredients": "Spaghetti, Eggs, Parmesan Cheese, Pancetta, Black Pepper, Olive Oil",
+                "instructions": "1. Cook spaghetti until al dente. 2. Fry pancetta until crispy. 3. Mix eggs, cheese, and pepper. 4. Toss spaghetti with pancetta and egg mixture. 5. Serve hot.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649370000000
+            },
+            "2": {
+                "recipeName": "Chicken Alfredo",
+                "author": "Chef Maria",
+                "imageUrl": "https://www.budgetbytes.com/wp-content/uploads/2022/07/Chicken-Alfredo-bowl.jpg",
+                "difficultyLevel": "Easy",
+                "shortDescription": "Creamy pasta dish with grilled chicken and parmesan cheese.",
+                "ingredients": "Fettuccine, Chicken Breast, Heavy Cream, Parmesan Cheese, Garlic, Butter",
+                "instructions": "1. Cook fettuccine according to package instructions. 2. Grill chicken breast and slice. 3. Heat butter and garlic, add cream and cheese. 4. Toss pasta with sauce and chicken. 5. Garnish with parsley.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649371000000
+            },
+            "3": {
+                "recipeName": "Vegetable Stir-Fry",
+                "author": "Chef Mei",
+                "imageUrl": "https://www.wholesomeyum.com/wp-content/uploads/2020/11/wholesomeyum-Stir-Fry-Vegetables-15.jpg",
+                "difficultyLevel": "Easy",
+                "shortDescription": "A quick and healthy dish with assorted vegetables stir-fried in soy sauce.",
+                "ingredients": "Assorted Vegetables (bell peppers, broccoli, carrots, etc.), Soy Sauce, Garlic, Ginger, Vegetable Oil",
+                "instructions": "1. Heat oil in a wok or skillet. 2. Add garlic and ginger, stir-fry briefly. 3. Add vegetables and stir-fry until tender-crisp. 4. Add soy sauce and toss to coat. 5. Serve hot.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649372000000
+            },
+            "4": {
+                "recipeName": "Beef Tacos",
+                "author": "Chef Juan",
+                "imageUrl": "https://danosseasoning.com/wp-content/uploads/2022/03/Beef-Tacos-768x575.jpg",
+                "difficultyLevel": "Easy",
+                "shortDescription": "Mexican-style tacos with seasoned ground beef, salsa, and toppings.",
+                "ingredients": "Ground Beef, Taco Seasoning, Tortillas, Lettuce, Tomato, Cheese, Salsa",
+                "instructions": "1. Cook ground beef with taco seasoning until browned. 2. Warm tortillas. 3. Assemble tacos with beef, lettuce, tomato, cheese, and salsa. 4. Serve with lime wedges.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649373000000
+            },
+            "5": {
+                "recipeName": "Caprese Salad",
+                "author": "Chef Giovanni",
+                "imageUrl": "https://www.modernhoney.com/wp-content/uploads/2021/07/Caprese-Salad-1-scaled.jpg",
+                "difficultyLevel": "Easy",
+                "shortDescription": "A simple Italian salad with tomatoes, mozzarella, basil, and balsamic glaze.",
+                "ingredients": "Tomatoes, Fresh Mozzarella, Fresh Basil, Balsamic Glaze, Olive Oil, Salt, Pepper",
+                "instructions": "1. Slice tomatoes and mozzarella. 2. Arrange on a plate with basil leaves. 3. Drizzle with balsamic glaze and olive oil. 4. Season with salt and pepper. 5. Serve chilled.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649374000000
+            },
+            "6": {
+                "recipeName": "Thai Green Curry",
+                "author": "Chef Nong",
+                "imageUrl": "https://www.kitchensanctuary.com/wp-content/uploads/2019/06/Thai-Green-Curry-square-FS.jpg",
+                "difficultyLevel": "Intermediate",
+                "shortDescription": "A fragrant and spicy Thai curry with chicken, vegetables, and coconut milk.",
+                "ingredients": "Chicken Thighs, Green Curry Paste, Coconut Milk, Mixed Vegetables (bell peppers, eggplant, etc.), Fish Sauce, Sugar, Thai Basil",
+                "instructions": "1. Cook chicken in a pan until browned. 2. Add curry paste and stir until fragrant. 3. Pour in coconut milk, fish sauce, and sugar. 4. Simmer until chicken is cooked. 5. Add vegetables and cook until tender. 6. Garnish with Thai basil. 7. Serve with rice.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649375000000
+            },
+            "7": {
+                "recipeName": "Mushroom Risotto",
+                "author": "Chef Sofia",
+                "imageUrl": "https://www.allrecipes.com/thmb/Pow6PE9UyushNDB4wutXNnmriX8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/85389-gourmet-mushroom-risotto-86-7a2d218f53e94ccfaecc69b6fd93cab8.jpg",
+                "difficultyLevel": "Intermediate",
+                "shortDescription": "Creamy Italian rice dish cooked with mushrooms, wine, and parmesan cheese.",
+                "ingredients": "Arborio Rice, Mushrooms, Onion, Garlic, White Wine, Parmesan Cheese, Chicken Broth, Butter",
+                "instructions": "1. Sauté onion and garlic in butter until soft. 2. Add mushrooms and cook until tender. 3. Stir in rice and cook until translucent. 4. Deglaze with wine and simmer until absorbed. 5. Gradually add broth, stirring until absorbed. 6. Stir in cheese until creamy. 7. Serve hot.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649376000000
+            },
+            "8": {
+                "recipeName": "Grilled Salmon with Lemon-Dill Sauce",
+                "author": "Chef Alex",
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoibFo393HWERroXOh6MS3-L84t9VcWaFLpSLHTlIxdQ&s",
+                "difficultyLevel": "Intermediate",
+                "shortDescription": "Tender grilled salmon fillets served with a tangy lemon-dill sauce.",
+                "ingredients": "Salmon Fillets, Lemon, Fresh Dill, Garlic, Olive Oil, Salt, Pepper",
+                "instructions": "1. Season salmon fillets with salt, pepper, and olive oil. 2. Grill until cooked through. 3. Mix lemon juice, dill, and minced garlic for sauce. 4. Serve salmon with sauce on the side.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649377000000
+            },
+            "9": {
+                "recipeName": "Homemade Pizza",
+                "author": "Chef Marco",
+                "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/sliced-pizza-on-chopping-board-overhead-view-royalty-free-image-763156339-1550158806.jpg",
+                "difficultyLevel": "Intermediate",
+                "shortDescription": "Classic pizza topped with tomato sauce, cheese, and your favorite toppings.",
+                "ingredients": "Pizza Dough, Tomato Sauce, Mozzarella Cheese, Pepperoni, Bell Peppers, Mushrooms, Olives",
+                "instructions": "1. Roll out pizza dough and spread sauce evenly. 2. Sprinkle cheese and add toppings. 3. Bake in a preheated oven until crust is golden and cheese is bubbly. 4. Slice and serve hot.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649378000000
+            },
+            "10": {
+                "recipeName": "Chicken Caesar Salad",
+                "author": "Chef Emily",
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ12GsRdRQp1HarWkMPagOxNplxc4r_Oj8Ir3W9154ZEg&s",
+                "difficultyLevel": "Easy",
+                "shortDescription": "A classic salad with grilled chicken, romaine lettuce, croutons, and Caesar dressing.",
+                "ingredients": "Romaine Lettuce, Grilled Chicken Breast, Croutons, Parmesan Cheese, Caesar Dressing",
+                "instructions": "1. Chop lettuce and slice chicken. 2. Toss lettuce with dressing. 3. Top with chicken, croutons, and shaved parmesan. 4. Serve immediately.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649379000000
+            },
+            "11": {
+                "recipeName": "Vegetarian Chili",
+                "author": "Chef Maya",
+                "imageUrl": "https://s23209.pcdn.co/wp-content/uploads/2022/10/211129_DAMN-DELICIOUS_Vegetarian-Chili_279.jpg",
+                "difficultyLevel": "Easy",
+                "shortDescription": "Hearty chili packed with beans, vegetables, and spices, perfect for vegetarians.",
+                "ingredients": "Kidney Beans, Black Beans, Diced Tomatoes, Bell Peppers, Onion, Garlic, Chili Powder, Cumin, Paprika",
+                "instructions": "1. Sauté onion and garlic until soft. 2. Add bell peppers and cook until tender. 3. Stir in beans, tomatoes, and spices. 4. Simmer for 20-30 minutes. 5. Serve hot with toppings like cheese and sour cream.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649380000000
+            },
+            "12": {
+                "recipeName": "Chocolate Chip Cookies",
+                "author": "Chef Sarah",
+                "imageUrl": "https://www.paleorunningmomma.com/wp-content/uploads/2020/07/protein-cookies-10.jpg",
+                "difficultyLevel": "Easy",
+                "shortDescription": "Soft and chewy cookies loaded with chocolate chips, perfect for dessert.",
+                "ingredients": "All-Purpose Flour, Butter, Brown Sugar, White Sugar, Eggs, Vanilla Extract, Baking Soda, Salt, Chocolate Chips",
+                "instructions": "1. Cream butter and sugars until light and fluffy. 2. Beat in eggs and vanilla. 3. Mix in flour, baking soda, and salt. 4. Stir in chocolate chips. 5. Drop dough onto baking sheets and bake until golden brown. 6. Cool on wire racks.",
+                "likes": [],
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "_createdOn": 1649381000000
+            }
+        },
         "recipes": {
             "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
