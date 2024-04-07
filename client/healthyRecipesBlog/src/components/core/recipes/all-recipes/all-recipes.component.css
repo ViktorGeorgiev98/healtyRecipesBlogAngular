@@ -46,6 +46,8 @@
     border-radius: 20px;
     padding: 20px;
     background-color: #ccc;
+    max-width: 500px;
+    flex-wrap: wrap;
     p {
         margin-bottom: 0;
         margin-top: 0;

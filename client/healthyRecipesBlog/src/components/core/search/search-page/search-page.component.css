@@ -46,6 +46,8 @@
     border-radius: 20px;
     padding: 20px;
     background-color: #ccc;
+    max-width: 500px;
+    flex-wrap: wrap;
     p {
         margin-bottom: 0;
         margin-top: 0;
@@ -70,12 +72,10 @@
 
     a {
         text-decoration: none;
-        border: 2px solid rgb(99, 95, 95);
+        border: 2px solid black;
         border-radius: 10px;
         background-color: green;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
         text-align: center;
         padding: 10px;
         font-size: 20px;
